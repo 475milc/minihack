@@ -158,14 +158,16 @@ function loadComparison(conversions, ind){
 	console.log("conversions1: "+conversions);
 	resultHTML = "";
 	food_name = healthy[ind].food;
+	food_calories = healthy[ind].calories;
 	food_comparison = conversions[ind];
 	// question = "How many "+food_name+" have the same calories as one "+searchItem+"?";
 	question = "One " + searchItem + " is equivalent to eating <br>" + food_comparison + " " +food_name +".";
+	healthyfood = "One " + food_name + " is " + food_calories + " calories.";
 	// console.log("conversions2: "+conversions);
 	button = "<button onclick='loadComparison(["+conversions+"], "+(ind+1)%healthy.length+")'>Show me another comparison!</button>";
 	// console.log("conversions3: "+conversions);
 
-	resultHTML += question+"<br><br>"+button;
+	resultHTML += question+"<br><br>"+healthyfood+"<br><br>"+button;
 
 	$("#comparison").html(resultHTML);
 
