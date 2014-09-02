@@ -163,11 +163,11 @@ function loadComparison(conversions, ind){
 	food_calories = healthy[ind].calories;
 	food_comparison = conversions[ind];
 	// question = "How many "+food_name+" have the same calories as one "+searchItem+"?";
-	question = "One " + searchItem + " is equivalent to eating <br>" + food_comparison + " " +food_name +".";
+	question = "Eating one " + searchItem + " is equivalent to eating <br>" + food_comparison + " " +food_name +".";
 	image = "<img src='images/"+images[ind]+".png' height='50%'>";
 	healthyfood = "One " + food_name + " is " + food_calories + " calories.";
 	// console.log("conversions2: "+conversions);
-	button = "<button onclick='loadComparison(["+conversions+"], "+(ind+1)%healthy.length+")'>Show me another comparison!</button>";
+	button = "<button id='showme' onclick='loadComparison(["+conversions+"], "+(ind+1)%healthy.length+")'>Show me another comparison!</button>";
 	// console.log("conversions3: "+conversions);
 
 	resultHTML += question+"<br><br>"+image+"<br><br>"+healthyfood+"<br><br>"+button;

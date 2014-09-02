@@ -71,7 +71,7 @@ a:hover{
 	background: #ffffff;
 	margin-left: 1%;
 	text-align: center;
-
+	font-size: 130%;
 }
 
 #part1{
@@ -93,14 +93,24 @@ a:hover{
 	text-align: center;
 }
 
-button{
+.foodChoice{
 	border: none;
 	/*height: 25px;*/
 	font-size: 100%;
 	background: none;
 }
 
-button:hover{
+.foodChoice:hover{
 	font-weight: bold;
 }
 
+#showme{
+	border: solid;
+	border-width: 1px;
+	font-size: 90%;
+	background: #dddddd;
+}
+
+#showme:hover{
+	background: #aaaaaa;
+}
