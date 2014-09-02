@@ -14,6 +14,8 @@ var healthy=[
 	{"food": "glasses of Orange Juice", "calories": 112}
 ]
 
+var images=["steak", "eggs", "toast", "apple", "salmon", "yogurt", "carrots", "strawberries", "bar", "oj"]
+
 //random number to generate healthy food comparison
 var randHealthy = 0;
 
@@ -96,7 +98,7 @@ function showSearchResults(response) {
 		resultHTML += "'"+phrase + "' has 0 results in the database. Please try again. "
 	}
 	else{
-		resultHTML += "<p><b>Select an option below</b></p>";
+		resultHTML += "<p><b>Select an option below for '"+phrase+"':</b></p>";
 		$.each(response.hits, function(key, value){
 			var item = value.fields;
 			var button = "<button type='button' class='foodChoice'";
@@ -162,12 +164,13 @@ function loadComparison(conversions, ind){
 	food_comparison = conversions[ind];
 	// question = "How many "+food_name+" have the same calories as one "+searchItem+"?";
 	question = "One " + searchItem + " is equivalent to eating <br>" + food_comparison + " " +food_name +".";
+	image = "<img src='images/"+images[ind]+".png' height='50%'>";
 	healthyfood = "One " + food_name + " is " + food_calories + " calories.";
 	// console.log("conversions2: "+conversions);
 	button = "<button onclick='loadComparison(["+conversions+"], "+(ind+1)%healthy.length+")'>Show me another comparison!</button>";
 	// console.log("conversions3: "+conversions);
 
-	resultHTML += question+"<br><br>"+healthyfood+"<br><br>"+button;
+	resultHTML += question+"<br><br>"+image+"<br><br>"+healthyfood+"<br><br>"+button;
 
 	$("#comparison").html(resultHTML);
 

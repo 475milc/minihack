@@ -3,7 +3,9 @@
 	<title>F2F</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" href="minihack.css">
-	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<!-- <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<script type='text/javascript' src='jquery-1.9.0.min.js'></script>
 	<script type='text/javascript' src='minihack.js'></script>
 	
@@ -15,7 +17,7 @@
 	<div id="part1" class="container1">
 		<p>Is what you're eating actually good for you?</p>
 		<form onsubmit="return false;" href="#part2" id="form1">
-			<input id="phraseEntry1" type="text" value="Enter a food"/>
+			<input id="phraseEntry1" type="text" placeholder="Enter a food"/>
 			<input id="button1"  type="submit" value="Search" />
 		</form>
 		<div id="error"></div>
@@ -25,7 +27,7 @@
 	<div id="part2" style="display:none" class="container">
 		<div class="content">
 			<form onsubmit="return false;" id="form2">
-				<input id="phraseEntry2" type="text" value=""/>
+				<input id="phraseEntry2" type="text" placeholder="Enter a food"/>
 				<input id="button2" type="submit" value="Search" />
 			</form>
 			<div id="choices"></div> 
