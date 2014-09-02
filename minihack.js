@@ -20,8 +20,10 @@ var images=["steak", "eggs", "toast", "apple", "salmon", "yogurt", "carrots", "s
 
 //random number to generate healthy food comparison
 var randHealthy = 0;
+var img_slider_num = 0;
 
 $(function() {   // when document is ready
+	var img_slider = setInterval(function () {runImgSlider(img_slider_num)}, 1500);
 	$("#form1").submit(function() {
 		console.log("Clicked");
 		$("#comparison").html("");
@@ -41,6 +43,16 @@ $(function() {   // when document is ready
 		// return false;
 		console.log("what");
 } );
+
+function runImgSlider(num) {
+	food_name = images[num];
+    $("#img_slider").html("<img src='images/"+food_name+".png' height='100%'>");
+    if (num < 9){
+    	img_slider_num++;
+    }else{
+    	img_slider_num = 0;
+    }
+}
 
 $(function() {   // when document is ready
 	$("#form2").submit(function() {

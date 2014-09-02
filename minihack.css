@@ -93,6 +93,11 @@ a:hover{
 
 #img_slider{
 	padding-top: 30px;
+	width: 500px;
+	height: 250px;
+	/*float: left;*/
+	margin: auto;
+	text-align: center;
 }
 
 #part2 input {
