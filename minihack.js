@@ -177,7 +177,11 @@ function loadComparison(conversions, ind){
 	food_calories = healthy[ind].calories;
 	food_comparison = conversions[ind];
 	// question = "How many "+food_name+" have the same calories as one "+searchItem+"?";
-	question = "Eating one " + searchItem + " is equivalent to eating <br>" + food_comparison + " " +food_name +".";
+	if (food_comparison != 1){
+		question = "Eating one '" + searchItem + "' is equivalent to eating <br>" + food_comparison + " " + food_name +".";
+	} else {
+		question = "Eating one '" + searchItem + "' is equivalent to eating <br>" + food_comparison + " " + singular_names[ind] +".";
+	}
 	image = "<img src='images/"+images[ind]+".png' height='50%'>";
 	healthyfood = "One " + singular_names[ind] + " is " + food_calories + " calories.";
 	// console.log("conversions2: "+conversions);
