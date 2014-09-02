@@ -22,7 +22,7 @@ $(function() {   // when document is ready
 		console.log("Clicked");
 		$("#comparison").html("");
 			var phraseEntry = $("#phraseEntry1").val();
-			if (phraseEntry == ""){
+			if (phraseEntry == "Enter a food"){
 				$("#error").html("Please enter a food in the search.")
 			}
 			else{
