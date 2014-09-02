@@ -19,14 +19,18 @@ var randHealthy = 0;
 
 $(function() {   // when document is ready
 	$("#form1").submit(function() {
-	// $('#button').click(function(){
 		console.log("Clicked");
 		$("#comparison").html("");
 			var phraseEntry = $("#phraseEntry1").val();
-			// $("#choices").html("POOP");
-			$("#part1").hide()
-			$("#part2").show()
-			getSearchItem(phraseEntry);
+			if (phraseEntry == ""){
+				$("#error").html("Please enter a food in the search.")
+			}
+			else{
+				$("#part1").hide()
+				$("#part2").show()
+				getSearchItem(phraseEntry);
+			}	
+			
 		console.log("searched");
 
 	});
@@ -36,15 +40,16 @@ $(function() {   // when document is ready
 
 $(function() {   // when document is ready
 	$("#form2").submit(function() {
-	// $('#button').click(function(){
 		console.log("Clicked");
+		$("#comparison").html("");
 		var phraseEntry = $("#phraseEntry2").val();
-		// $("#choices").html("POOP");
-		getSearchItem(phraseEntry);
-		console.log("searched");
+		if (phraseEntry == ""){
+			$("#choices").html("Please enter a food in the search.")
+		}
+		else{
+			getSearchItem(phraseEntry);
+		}
 	});
-		// return false;
-		console.log("what");
 } );
 
 
@@ -58,7 +63,7 @@ $(function() {   // when document is ready
 function getSearchItem(phraseEntry) {
 	console.log("in getSearchItem()");
 	var url = "https://api.nutritionix.com/v1_1/search/";
-	var phrase = phraseEntry;
+	phrase = phraseEntry;
 	var lower_range = 0;
 	var upper_range = 10
 	var numResults = "?results="+lower_range+"%3A"+upper_range; //searches 
@@ -87,16 +92,22 @@ function getSearchItem(phraseEntry) {
 function showSearchResults(response) {
 	resultHTML = "";
 	console.log(response)
-	$.each(response.hits, function(key, value){
-		var item = value.fields;
-		var button = "<button type='button' class='foodChoice'";
-		button += "id="+item.item_id;
-		button += " onclick='getCalories(this.id)' >";
-		button += item.item_name;
-		button += "</button>";
-		console.log(key + ": " + item.item_name);
-		resultHTML += button + "<br><br>";
-	});
+	if (response.hits.length == 0){
+		resultHTML += "'"+phrase + "' has 0 results in the database. Please try again. "
+	}
+	else{
+		resultHTML += "<p><b>Select an option below</b></p>";
+		$.each(response.hits, function(key, value){
+			var item = value.fields;
+			var button = "<button type='button' class='foodChoice'";
+			button += "id="+item.item_id;
+			button += " onclick='getCalories(this.id)' >";
+			button += item.item_name;
+			button += "</button>";
+			console.log(key + ": " + item.item_name);
+			resultHTML += button + "<br><br>";
+		});
+	}
 	return resultHTML;
 }
 
