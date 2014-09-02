@@ -1,6 +1,6 @@
 
 body{
-	background: #F0EFDD;
+	background: #E7E7E2;
 	font-family: 'Open Sans', sans-serif;
 	padding: 0px;
 	margin: 0%;
@@ -11,13 +11,13 @@ body{
 }
 
 #line{
-	background: #595345;
+	background: #484D48;
 	padding: 1%;
 }
 
 #banner{
 	padding:0.1%;
-	background: #C0B693;
+	background: #A4CCA8;
 }
 
 #banner h1{
@@ -27,17 +27,17 @@ body{
 }
 
 a:link {
-	color: #4D7656;
+	color: #484D48;
     text-decoration: none;
 }
 
 a:visited{
-	color: #4D7656;
+	color: #484D48;
 	text-decoration: none;
 }
 
 a:hover{
-	color: #659B79;
+	color: #F1E3C5;
 }
 
 .container{
