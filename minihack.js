@@ -6,7 +6,7 @@ var healthy=[
 	{"food": "Boiled Eggs", "calories": 77},
 	{"food": "slices of Wheat Toast", "calories": 75},
 	{"food": "Apples", "calories": 95},
-	{"food": "filets of Salmon", "calories": 190},
+	{"food": "filets of Salmon", "calories": 380},
 	{"food": "cups of Greek Yogurt", "calories": 140},
 	{"food": "Carrots", "calories": 25},
 	{"food": "Strawberries", "calories": 9},
