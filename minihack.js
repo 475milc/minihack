@@ -14,6 +14,8 @@ var healthy=[
 	{"food": "glasses of Orange Juice", "calories": 112}
 ]
 
+var singular_names=["ounce of steak", "boiled egg", "slice of wheat toast", "apple", "filet of Salmon", "cup of Greek yogurt", "carrot", "strawberry", "Oats 'N Honey granola bar", "glass of orange juice"];
+
 var images=["steak", "eggs", "toast", "apple", "salmon", "yogurt", "carrots", "strawberries", "bar", "oj"]
 
 //random number to generate healthy food comparison
@@ -165,7 +167,7 @@ function loadComparison(conversions, ind){
 	// question = "How many "+food_name+" have the same calories as one "+searchItem+"?";
 	question = "Eating one " + searchItem + " is equivalent to eating <br>" + food_comparison + " " +food_name +".";
 	image = "<img src='images/"+images[ind]+".png' height='50%'>";
-	healthyfood = "One " + food_name + " is " + food_calories + " calories.";
+	healthyfood = "One " + singular_names[ind] + " is " + food_calories + " calories.";
 	// console.log("conversions2: "+conversions);
 	button = "<button id='showme' onclick='loadComparison(["+conversions+"], "+(ind+1)%healthy.length+")'>Show me another comparison!</button>";
 	// console.log("conversions3: "+conversions);
